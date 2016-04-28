@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<p>计算属性</p>
+<div id="demo">
+    {{fullname}}
+</div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var data={
+        firstname:'mark',
+        lastname:'roy',
+        fullname:'mark roy'
+    }
+    var vm = new Vue({
+        el:'#demo',
+        data:data,
+        computed:{
+//            fullname: function () {
+//                return this.firstname + " "+ this.lastname;
+//            }
+        },
+        watch: {
+            firstname: function () {
+                this.fullname = this.firstname + " " + this.lastname;
+            },
+            lastname: function (val) {
+                this.fullname = this.firstname + ' ' + val
+            }
+        }
+    })
+
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!--<div id="demo" :class="{'class-A':isA,'class-B':isB,'class-C':isC}">-->
+    <!--123123-->
+<!--</div>-->
+<div id="demo" :class="[classA,isB?classB:'']" v-bind:style="[styleA,styleB]">
+    <p>class与style绑定</p>
+    123123
+</div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var data={
+        classA:'class-A',
+        classB:'class-B',
+        isB:false,
+        styleA:{
+            color:'white',
+            backgroundColor:'red',
+            fontSize:'13px'
+        },
+        styleB:{
+            lineHeight:2,
+            textAlign:'center'
+        }
+    }
+    var vm = new Vue({
+        el:'#demo',
+        data:data
+
+    })
+
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<p>计算属性 setter</p>
+<div id="demo">
+    fullname:{{fullname}} </br>
+    firstname:{{firstname}} </br>
+    lastname:{{lastname}}</br>
+
+</div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var data={
+        firstname:'mark',
+        lastname:'roy',
+        fullname:'mark roy'
+    }
+    var vm = new Vue({
+        el:'#demo',
+        data:data,
+        computed:{
+
+            fullname:{
+                //getter
+                get: function () {
+                    return this.firstname + ' ' + this.lastname
+                },
+                //setter
+                set: function (newValue) {
+                    var names = newValue.split(' ');
+                    this.firstname = names[0];
+                    this.lastname = names[names.length-1];
+                }
+            }
+
+        },
+        watch: {
+        }
+    })
+
+</script>
+</html>

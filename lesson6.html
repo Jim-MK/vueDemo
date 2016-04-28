@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<p>计算属性</p>
+<div id="exp1">
+    a = {{a}}, b={{b}}
+</div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var data={
+        a:4,
+        b:null
+    }
+    var vm = new Vue({
+        el:'#exp1',
+        data:data,
+        computed:{
+        },
+        watch: {
+            a: function () {
+                this.b = this.a +1
+            }
+        }
+    })
+
+</script>
+</html>

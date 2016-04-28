@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="demo">
+    <button @click="alert">点击</button>
+    <input type="text" @keyup.enter="do"/>
+    <input type="text" @keyup.space="doSpace"/>
+  </div>
+
+</body>
+<script src="vue.js"></script>
+<script>
+
+  var vm = new Vue({
+    el:'#demo',
+    data:{
+      name:'mark2'
+    },
+    methods:{
+      alert: function (e) {
+        alert(this.name);
+        alert(e.target.tagName)
+      },
+      do: function () {
+        alert('回车键');
+      },
+      doSpace: function () {
+        alert('space')
+      }
+    }
+  })
+
+</script>
+</html>

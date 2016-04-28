@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="exp1">
+        hello {{name}}!
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var expData = {
+        name:'vue.js333'
+    }
+    var exp = new Vue({
+        el:'#exp1',
+        data:expData
+    })
+
+</script>
+</html>

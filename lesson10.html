@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="example-1">
+    <li v-for="item in items">
+      <p>{{ parentMessage }} - {{$index}} - {{item.message}}</p>
+      <p>{{$key}} - {{item.message}}</p>
+    </li>
+  </ul>
+
+</body>
+<script src="vue.js"></script>
+<script>
+
+  var vm = new Vue({
+    el:'#example-1',
+    data:{
+      parentMessage:'mark',
+      items:[
+        {message:'123'},
+        {message:'4214'},
+        {message:'123'},
+        {message:'421224'},
+        {message:'422214'},
+        {message:'42134'},
+      ]
+    }
+  })
+
+</script>
+</html>

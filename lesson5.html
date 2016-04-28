@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="el" class="item-{{b}}">
+        {{a +1}} + {{b}} + {{ok?'yes':'no'}}
+        <a href="{{url}}">123123</a>
+        <a v-bind:href="url" v-on:click="click">百度</a>
+        <a :href="url" @click="click">百度</a>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var data={
+        a:4,
+        b:'hd',
+        'ok':true,
+        url:'http://www.baidu.com'
+    }
+    var vm = new Vue({
+        el:el,
+        data:data,
+        created:function(){
+            console.log('a is ' + this.a);
+        },
+        methods:{
+            add:function(){
+                return arguments++
+            },
+            click: function () {
+                alert(1);
+            }
+        }
+    })
+
+    vm.$watch('b',function(){
+        alert(1);
+    })
+
+</script>
+</html>

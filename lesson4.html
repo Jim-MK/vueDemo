@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="el">{{a}} + {{b}}</div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var data={a:1,b:2}
+    var vm = new Vue({
+        el:el,
+        data:data,
+        created:function(){
+            console.log('a is ' + this.a);
+        }
+    })
+
+    vm.$watch('b',function(){
+        alert(1);
+    })
+
+</script>
+</html>

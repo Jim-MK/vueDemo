@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="exp2">
+        <p v-if ='greeting'>Hello!</p>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var exp = new Vue({
+        el:'#exp2',
+        data:{
+            greeting:true
+        }
+    })
+
+</script>
+</html>
